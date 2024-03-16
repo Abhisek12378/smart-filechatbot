@@ -28,6 +28,10 @@ app.add_middleware(
 
 
 @app.post("/predict", response_model = Response)
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the API"}
 def predict() -> Any:
   
   #implement this code block
