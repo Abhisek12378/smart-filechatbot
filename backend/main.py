@@ -20,7 +20,6 @@ origins = [
 ]
 
 app = FastAPI()
-app.mount("/", StaticFiles(directory="frontend/build", html=True), name="static")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -28,6 +27,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.mount("/", StaticFiles(directory="frontend/build", html=True), name="static")
 
 
 @app.post("/predict", response_model = Response)
