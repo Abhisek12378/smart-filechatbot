@@ -26,7 +26,7 @@ export default function App() {
       formData.append("question", question);
     }
 
-    fetch("http://127.0.0.1:8000/predict", {
+    fetch("https://smart-filechartbot-6717d0410ce8.herokuapp.com/predict", {
       method: "POST",
       body: formData,
     })
