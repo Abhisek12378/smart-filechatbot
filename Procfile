@@ -1,1 +1,1 @@
-web: npm run build --prefix frontend && npm run serve --prefix frontend
+web: uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-5000}

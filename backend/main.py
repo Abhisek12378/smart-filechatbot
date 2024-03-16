@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Any
 
+from starlette.staticfiles import StaticFiles
+
 # Load environment variables from .env file (if any)
 load_dotenv()
 
@@ -18,6 +20,7 @@ origins = [
 ]
 
 app = FastAPI()
+app.mount("/", StaticFiles(directory="frontend/build", html=True), name="static")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
