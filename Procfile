@@ -1,1 +1,1 @@
-web: gunicorn backend.main:app -k uvicorn.workers.UvicornWorker
+web: uvicorn main:app --reload
