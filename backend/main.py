@@ -16,7 +16,8 @@ origins = [
     "http://localhost",
     "http://localhost:8080",
     "http://localhost:3000",
-    "https://smart-filechartbot-6717d0410ce8.herokuapp.com/"
+    "https://smart-filechartbot-6717d0410ce8.herokuapp.com/",
+    "https://smart-filechartbot-6717d0410ce8.herokuapp.com/predict"
 ]
 
 app = FastAPI()
