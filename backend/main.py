@@ -22,13 +22,6 @@ origins = [
 ]
 
 app = FastAPI()
-
-
- if __name__ == "__main__":
-     import uvicorn
-     port = int(os.environ.get("PORT", 5000))
-     uvicorn.run(app, host="0.0.0.0", port=port)
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -36,6 +29,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 app.mount("/", StaticFiles(directory="frontend/build", html=True), name="static")
 
 
