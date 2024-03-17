@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Any
+import os
 
 from starlette.staticfiles import StaticFiles
 
@@ -21,6 +22,13 @@ origins = [
 ]
 
 app = FastAPI()
+
+
+ if __name__ == "__main__":
+     import uvicorn
+     port = int(os.environ.get("PORT", 5000))
+     uvicorn.run(app, host="0.0.0.0", port=port)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
