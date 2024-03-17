@@ -23,6 +23,7 @@ export default function App() {
       formData.append("file", file);
     }
     if (question) {
+      console.log('after question came');
       formData.append("question", question);
     }
 
